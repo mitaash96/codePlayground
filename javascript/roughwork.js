@@ -1,0 +1,1 @@
+console.log(Array.from({length:2}, i => i+1));
