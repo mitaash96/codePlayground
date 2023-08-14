@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="grid place-items-center min-h-screen bg-cyan-100">
+  <div class="container mx-auto py-40">
+    <h1 class="text-4xl font-bold mb-4">Welcome to My Home Page</h1>
+    <p class="text-lg">This is a simple home page using HTMX and Tailwind CSS.</p>
+    <button id="loadContentButton" class="bg-blue-500 hover:bg-blue-700 hover:scale-110 text-white font-bold py-2 px-4 rounded mt-4 transition-all duration-500"
+            hx-get="/src/pages/home.html" hx-target="#home" hx-swap="outerHTML">
+      Load About Page
+    </button>
+  </div>
+
+  <div id="home" class="max-h-0 overflow-hidden transition-max-h duration-1000"></div>
+
+  <script src="/node_modules/htmx.org/dist/htmx.min.js"></script>
+</body>
+</html>
