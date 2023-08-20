@@ -5,7 +5,12 @@ module.exports = {
     "./index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'roboto': ['"Roboto Condensed"'],
+        'poppins': ['"Poppins"']
+      }
+    },
   },
   plugins: [],
 }

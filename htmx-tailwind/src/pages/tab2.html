@@ -1,0 +1,15 @@
+<div class="container mx-auto">
+  <h1 class="text-2xl font-bold">CSV to HTML Table</h1>
+  <div class="mt-4">
+    <input type="file" id="csv-file" class="w-full" accept=".csv">
+    <button id="read-csv">Read CSV</button>
+  </div>
+  <div id="table-container" class="hidden">
+    <table class="table w-full border-spacing-2">
+      <thead>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+<script src="/src/modules/csv-render.js"></script>

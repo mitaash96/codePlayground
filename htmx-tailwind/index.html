@@ -1,22 +1,31 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href="/dist/output.css" rel="stylesheet">
 </head>
-<body class="grid place-items-center min-h-screen bg-cyan-100">
-  <div class="container mx-auto py-40">
-    <h1 class="text-4xl font-bold mb-4">Welcome to My Home Page</h1>
-    <p class="text-lg">This is a simple home page using HTMX and Tailwind CSS.</p>
-    <button id="loadContentButton" class="bg-blue-500 hover:bg-blue-700 hover:scale-110 text-white font-bold py-2 px-4 rounded mt-4 transition-all duration-500"
-            hx-get="/src/pages/home.html" hx-target="#home" hx-swap="outerHTML">
-      Load About Page
-    </button>
+<body class="py-8 font-roboto m-6">
+  <h1 class="text-4xl p-3 justify-center text-center">Combat Sports</h1>
+  <!-- Tabs Section -->
+  <div id="tabs" class="tab-list justify-center flex" 
+    hx-target="#tab-contents" role="tablist" _="on htmx:afterOnLoad set @aria-selected of <[aria-selected=true]/> to false tell the target take .selected set @aria-selected to true">
+    <button role="tab" aria-controls="tab-content-1" aria-selected="false" hx-get="/src/pages/tab1.html" class="selected tab-button"><span>Tab 1</span></button>
+    <button role="tab" aria-controls="tab-content-2" aria-selected="false" hx-get="/src/pages/tab2.html" class="tab-button" hx-trigger="click transition">Tab 2</button>
+    <button role="tab" aria-controls="tab-content-3" aria-selected="false" hx-get="/src/pages/tab3.html" class="tab-button" hx-trigger="click transition">Tab 3</button>
   </div>
 
-  <div id="home" class="max-h-0 overflow-hidden transition-max-h duration-1000"></div>
+  <!-- Tab Contents -->
+  <div id="tab-contents" role="tabpanel" class="flex justify-center p-10"></div>
 
+  <!-- Include HTMX JavaScript -->
+  <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
   <script src="/node_modules/htmx.org/dist/htmx.min.js"></script>
+  <script>
+    // JavaScript logic can be placed here
+  </script>
 </body>
 </html>

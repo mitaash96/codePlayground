@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .tab-button {
+        @apply bg-slate-100 shadow-lg text-slate-900 h-10 w-24;
+    }
+    .tab-button:hover {
+        @apply bg-red-600 text-white;
+    }
+    .tab-button[aria-selected="true"] {
+        @apply bg-black text-white;
+    }
+    th{
+        @apply bg-slate-800 text-white border border-white;
+    }
+    td{
+        @apply border-black border bg-slate-100 border-white p-2 text-center;
+    }
+    td:first-child{
+        @apply text-left
+    }
+}
